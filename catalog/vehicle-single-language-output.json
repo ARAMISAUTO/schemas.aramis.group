@@ -1,0 +1,121 @@
+{
+  "$schema": "../catalog/vehicle-single-language-output.schema.json",
+
+  "vin": "A33292072034SMPW3",
+  "offerId": "23235345",
+  "vehicleId": "2342523523455",
+  "offerType": { "id": "new", "label": "Voiture neuve" },
+  "status": { "id": "sold", "label": "Ventu" },
+  "originCountry": { "id": "ESP", "label": "Espagne" },
+  "isMarketplace": false,
+  "firstCirculationDate": "2010-10-20",
+  "warrantyExpirationDate": "2010-10-20",
+  "mileage": { "km": 123432 },
+  "euronorm": "4",
+  "critair": "5",
+  "frenchFiscalPower": 11,
+  "frenchGenre": "VP",
+  "belgianFiscalPower": 10,
+  "belgianOtoto": { "url": "https://ototo" },
+  "belgianCarpass": { "url": "https://carpass" },
+  "catalogPriceWithOptionsWithTaxes": 12345.67,
+  "takeoverPremium": -1200.0,
+  "sellingPriceWithTaxes": 10000.0,
+  "discount": { "percent": 20.0 },
+  "sellingPriceWithTakeoverWithTaxes": 8000.0,
+  "discountWithTakeover": { "percent": 20.0 },
+  "indicativeLoan": { "monthlyInstallment": 123.4, "months": 72 },
+  "variants": [
+    {
+      "vehicleId": "2342523523455",
+      "manufacturerColor": "Rouge anthracite",
+      "simpleColor": { "id": "red", "label": "Rouge" },
+      "simpleColor2": { "id": null, "label": null },
+      "photo": { "url": "http://thumbnail" }
+    },
+    {
+      "vehicleId": "2342523523452",
+      "manufacturerColor": "Bleu anthracite",
+      "simpleColor": { "id": "blue", "label": "Bleu" },
+      "simpleColor2": { "id": null, "label": null },
+      "photo": { "url": "http://thumbnail" }
+    }
+  ],
+  "media": [
+    {
+      "type": "photo",
+      "url": "https://photo",
+      "orientation": 0
+    },
+    {
+      "type": "video",
+      "url": "https://photo"
+    }
+  ],
+  "photo": { "url": "https://photo" },
+  "maker": "SEAT",
+  "model": "ARONA",
+  "engine": "",
+  "finish": "Some finish",
+  "version": "Some version",
+  "interior": "",
+  "manufacturerColor": "Rouge anthracite",
+  "expertComments": "",
+  "category": { "id": "station-wagon", "label": "Break" },
+  "segment": { "id": "family", "label": "Familiar" },
+  "energyType": { "id": "diesel", "label": "Diesel" },
+  "simpleColor": { "id": "red", "label": "Rouge" },
+  "simpleColor2": { "id": null, "label": null },
+  "interiorSimpleColor": { "id": "black", "label": "Noir" },
+  "transmission": { "id": "automatic", "label": "Automatique" },
+  "drive": { "id": "fwd", "label": "Traction avant" },
+  "equipments": [
+    { "label": "Climatisation", "category": { "id": "comfort", "label": "Confort" } }
+  ],
+  "simpleEquipments": [
+    { "id": "air-conditioning", "label": "Climatisation" },
+    { "id": "cruise-control", "label": "Régulateur de vitesse" }
+  ],
+  "options": [
+    { "label": "GPS", "priceWithTaxes": 300.0 }
+  ],
+  "promotions": [
+    { "id": "12345", "label": "Super Deal" }
+  ],
+  "doors": 5,
+  "gears": 5,
+  "seats": 5,
+  "cylinders": 4,
+  "power": { "ch": 100, "kw": 120 },
+  "engineCapacity": { "cc": 1380 },
+  "urbanCycleConsumption": { "ltPer100Km": 5.8, "kwhPer100Km": null },
+  "extraUrbanCycleConsumption": { "ltPer100Km": 5.8, "kwhPer100Km": null },
+  "combinedCycleConsumption":{ "ltPer100Km": 5.8, "kwhPer100Km": null },
+  "co2EmissionsNedc": { "gramsPerKm": null },
+  "co2EmissionsWltp": { "gramsPerKm": 12.2 },
+  "height": { "meters": 1.88 },
+  "width": { "meters": 2.88 },
+  "length": { "meters": 3.88 },
+  "wheelbase": { "meters": 2.88 },
+  "unloadedWeight": { "kg": 1234.3 },
+  "totalAuthorizedWeight": { "kg": 1234.3 },
+  "minBootSpaceBackCapacity": { "lt": 134.3 },
+  "maxBootSpaceBackCapacity": { "lt": 154.3 },
+  "bootSpaceFrontCapacity": { "lt": null },
+  "maxSpeed": { "kmPerHour": 334.3 },
+  "electricRangeNedc": { "km": null },
+  "electricRangeWltp": { "km": null },
+  "electricBatteryWarrantyPeriod": { "km": null, "years": null },
+  "electricBatteryStateOfHealth": { "percent": null },
+  "electricBatteryCapacity": { "kwh": null },
+  "electricBatteryType": null,
+  "electricBatterySlowChargePower": { "kw": null },
+  "electricBatterySlowChargeTime": { "minutes": null },
+  "electricBatteryMediumChargePower": { "kw": null },
+  "electricBatteryMediumChargeTime": { "minutes": null },
+  "electricBatteryQuickChargePower": { "kw": null },
+  "electricBatteryQuickChargeTime": { "minutes": null },
+  "electricBatteryCost": null,
+  "electricMaximumPowerCarElectricalOutlet": { "kw": null },
+  "electricMaximumPowerCarDirectCurrent": { "amperes": null }
+}

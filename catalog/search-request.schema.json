@@ -1,0 +1,238 @@
+{
+  "$id": "https://schemas.aramis.group/catalog/search-request.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string", "pattern": "\/catalog\/search-request\\.schema\\.json$" },
+
+    "criteria": { "type": "object", "additionalProperties": false, "properties": {
+      "text": { "type": "string" },
+      "offerId": { "type": "object", "additionalProperties": false, "required": ["in"], "properties": {
+        "in": { "type": "array", "items": { "type": "string", "minLength": 1 }}
+      }},
+      "vehicleId": { "type": "object", "additionalProperties": false, "required": ["in"], "properties": {
+        "in": { "type": "array", "items": { "type": "string", "minLength": 1 }}
+      }},
+      "offerType.id": { "type": "object", "additionalProperties": false, "required": ["in"], "properties": {
+        "in": { "type": "array", "items": { "$ref": "base.schema.json#/$defs/offer-type-id"}}
+      }},
+      "firstCirculationDate": { "type": "object", "additionalProperties": false, "required": ["min", "max"], "properties": {
+        "min": { "type": ["null", "string"], "format": "date", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "max": { "type": ["null", "string"], "format": "date", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+      }},
+      "milage.km": { "type": "object", "additionalProperties": false, "required": ["min", "max"], "properties": {
+        "min": { "type": ["null", "integer"] },
+        "max": { "type": ["null", "integer"] }
+      }},
+      "euronorm": { "type": "object", "additionalProperties": false,"required": ["in"], "properties": {
+        "in": { "type": "array", "items": { "$ref": "base.schema.json#/$defs/euronorm-string"} }
+      }},
+      "critair": { "type": "object", "additionalProperties": false,"required": ["in"], "properties": {
+        "in": { "type": "array", "items": { "$ref": "base.schema.json#/$defs/critair-string"} }
+      }},
+
+      "sellingPriceWithTaxes": { "type": "object", "additionalProperties": false, "required": ["min", "max"], "properties": {
+        "min": { "type": ["null", "number"] },
+        "max": { "type": ["null", "number"] }
+      }},
+      "sellingPriceWithTakeOverWithTaxes": { "type": "object", "additionalProperties": false, "required": ["min", "max"], "properties": {
+        "min": { "type": ["null", "number"] },
+        "max": { "type": ["null", "number"] }
+      }},
+      "indicativeMinimumMonthlyInstallment": { "type": "object", "additionalProperties": false, "required": ["min", "max"], "properties": {
+        "min": { "type": ["null", "number"] },
+        "max": { "type": ["null", "number"] }
+      }},
+      "indicativeMinimumMonthlyInstallmentWithTakeover": { "type": "object", "additionalProperties": false, "required": ["min", "max"], "properties": {
+        "min": { "type": ["null", "number"] },
+        "max": { "type": ["null", "number"] }
+      }},
+      "maker": { "type": "object", "additionalProperties": false, "required": ["in"], "properties": {
+        "in": { "type": "array", "items": { "type": "string", "minLength": 1 }}
+      }},
+      "model": { "type": "object", "additionalProperties": false, "required": ["in"], "properties": {
+        "in": { "type": "array", "items": { "type": "string", "minLength": 1 }}
+      }},
+      "simpleColor.id": { "type": "object", "additionalProperties": false, "required": ["in"], "properties": {
+        "in": { "type": "array", "items": { "$ref": "base.schema.json#/$defs/simple-color-id"}}
+      }},
+      "simpleEquipment.id": { "type": "object", "additionalProperties": false, "required": ["in"], "properties": {
+        "in": { "type": "array", "items": { "$ref": "base.schema.json#/$defs/simple-equipment-id"}}
+      }},
+      "category.id": { "type": "object", "additionalProperties": false, "required": ["in"], "properties": {
+        "in": { "type": "array", "items": { "$ref": "base.schema.json#/$defs/category-id"}}
+      }},
+      "energyType.id": { "type": "object", "additionalProperties": false, "required": ["in"], "properties": {
+        "in": { "type": "array", "items": { "$ref": "base.schema.json#/$defs/energy-type-id"}}
+      }},
+      "transmission.id": { "type": "object", "additionalProperties": false, "required": ["in"], "properties": {
+        "in": { "type": "array", "items": { "$ref": "base.schema.json#/$defs/transmission-id"}}
+      }},
+      "drive.id": { "type": "object", "additionalProperties": false, "required": ["in"], "properties": {
+        "in": { "type": "array", "items": { "$ref": "base.schema.json#/$defs/drive-id"}}
+      }},
+      "promotion.id": { "type": "object", "additionalProperties": false, "required": ["in"], "properties": {
+        "in": { "type": "array", "items": { "type": "string", "minLength": 1 }}
+      }},
+      "doors": { "type": "object", "additionalProperties": false, "required": ["min", "max"], "properties": {
+        "min": { "type": ["null", "integer"] },
+        "max": { "type": ["null", "integer"] }
+      }},
+      "seats": { "type": "object", "additionalProperties": false, "required": ["min", "max"], "properties": {
+        "min": { "type": ["null", "integer"] },
+        "max": { "type": ["null", "integer"] }
+      }}
+    }},
+    "facets": { "type": "array", "uniqueItems": true, "items": { "enum": [
+      "offerType",
+      "firstCirculationYear",
+      "mileage.km.slice",
+      "euronorm",
+      "critair",
+      "sellingPriceWithTaxes.slice",
+      "sellingPriceWithTakeOverWithTaxes.slice",
+      "indicativeLoadInstallment.slice",
+      "maker",
+      "model",
+      "simpleColor",
+      "simpleEquipment",
+      "category",
+      "segment",
+      "energyType",
+      "transmission",
+      "drive",
+      "promotion",
+      "doors",
+      "seats"
+    ]}},
+    "order": { "type": "array", "uniqueItems": true, "items": {"type": "object", "additionalProperties": false, "minProperties":1, "maxProperties": 1, "properties": {
+      "publicationDate": { "enum": ["asc", "desc"] },
+      "mileage.km": { "enum": ["asc", "desc"] },
+      "sellingPriceWithTaxes": { "enum": ["asc", "desc"] },
+      "sellingPriceWithTakeOverWithTaxes": { "enum": ["asc", "desc"] },
+      "indicativeMinimumMonthlyInstallment": { "enum": ["asc", "desc"] },
+      "indicativeMinimumMonthlyInstallmentWithTakeover": { "enum": ["asc", "desc"] },
+      "maker": { "enum": ["asc", "desc"] },
+      "model": { "enum": ["asc", "desc"] },
+      "power.ch": { "enum": ["asc", "desc"] },
+      "combinedCycleConsumption.ltPer100Km": { "enum": ["asc", "desc"] },
+      "combinedCycleConsumption.kwhPer100Km": { "enum": ["asc", "desc"] }
+    }}},
+    "limit": { "type": "integer", "minimum": 0, "default": 100 },
+    "offset": { "type": "integer", "minimum": 0, "default": 0 },
+    "fields": { "type": "array", "uniqueItems": true, "items": { "enum": [
+      "vin",
+      "offerId",
+      "vehicleId",
+      "offerType.id",
+      "offerType.label",
+      "status.id",
+      "status.label",
+      "originCountry.id",
+      "originCountry.label",
+      "isMarketplace",
+      "firstCirculationDate",
+      "warrantyExpirationDate",
+      "mileage.km",
+      "euronorm",
+      "critair",
+      "frenchFiscalPower",
+      "frenchGenre",
+      "belgianFiscalPower",
+      "belgianOtoto.url",
+      "belgianCarpass.url",
+      "catalogPriceWithOptionsWithTaxes",
+      "takeoverPremium",
+      "sellingPriceWithTaxes",
+      "discount.percent",
+      "sellingPriceWithTakeoverWithTaxes",
+      "discountWithTakeover.percent",
+      "indicativeLoan.monthlyInstallment",
+      "indicativeLoan.months",
+      "variants.vehicleId",
+      "variants.manufacturerColor",
+      "variants.simpleColor.id",
+      "variants.simpleColor.label",
+      "variants.simpleColor2.id",
+      "variants.simpleColor2.label",
+      "variants.photo.url",
+      "media.type",
+      "media.url",
+      "media.orientation",
+      "photo.url",
+      "maker",
+      "model",
+      "engine",
+      "finish",
+      "version",
+      "interior",
+      "manufacturerColor",
+      "expertComments",
+      "category.id",
+      "category.label",
+      "segment.id",
+      "segment.label",
+      "energyType.id",
+      "energyType.label",
+      "simpleColor.id",
+      "simpleColor.label",
+      "interiorSimpleColor.id",
+      "interiorSimpleColor.label",
+      "transmission.id",
+      "transmission.label",
+      "drive.id",
+      "drive.label",
+      "equipments.label",
+      "equipments.category.id",
+      "equipments.category.label",
+      "simpleEquipments.id",
+      "simpleEquipments.label",
+      "options.label",
+      "options.priceWithTaxes",
+      "promotions.id",
+      "promotions.label",
+      "doors",
+      "gears",
+      "seats",
+      "cylinders",
+      "power.ch",
+      "power.kw",
+      "engineCapacity.cc",
+      "urbanCycleConsumption.ltPer100Km",
+      "urbanCycleConsumption.kwhPer100Km",
+      "extraUrbanCycleConsumption.ltPer100Km",
+      "extraUrbanCycleConsumption.kwhPer100Km",
+      "combinedCycleConsumption.ltPer100Km",
+      "combinedCycleConsumption.kwhPer100Km",
+      "co2EmissionsNedc.gramsPerKm",
+      "co2EmissionsWltp.gramsPerKm",
+      "height.meters",
+      "width.meters",
+      "length.meters",
+      "wheelbase.meters",
+      "unloadedWeight.kg",
+      "totalAuthorizedWeight.kg",
+      "minBootSpaceBackCapacity.lt",
+      "maxBootSpaceBackCapacity.lt",
+      "bootSpaceFrontCapacity.lt",
+      "maxSpeed.kmPerHour",
+      "electricRangeNedc.km",
+      "electricRangeWltp.km",
+      "electricBatteryWarrantyPeriod.km",
+      "electricBatteryWarrantyPeriod.years",
+      "electricBatteryStateOfHealth.percent",
+      "electricBatteryCapacity.kwh",
+      "electricBatteryType",
+      "electricBatterySlowChargePower.kw",
+      "electricBatterySlowChargeTime.minutes",
+      "electricBatteryMediumChargePower.kw",
+      "electricBatteryMediumChargeTime.minutes",
+      "electricBatteryQuickChargePower.kw",
+      "electricBatteryQuickChargeTime.minutes",
+      "electricBatteryCost",
+      "electricMaximumPowerCarElectricalOutlet.kw",
+      "electricMaximumPowerCarDirectCurrent.amperes"
+    ]}}
+  }
+}

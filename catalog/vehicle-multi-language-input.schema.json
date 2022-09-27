@@ -1,0 +1,404 @@
+{
+  "$id": "https://schemas.aramis.group/catalog/vehicle-multi-language-input.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string", "pattern": "\/catalog\/vehicle-multi-language-input\\.schema\\.json$" },
+    "vin": { "type": ["null", "string"], "pattern": "^[A-HJ-NPR-Z0-9]{17}$" },
+    "offerId": { "type": "string", "minLength": 1 },
+    "vehicleId": { "type": "string", "minLength": 1 },
+
+    "offerType": { "anyOf": [
+      { "$ref": "./base.schema.json#/$defs/offer-type-id" },
+      { "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "$ref": "./base.schema.json#/$defs/offer-type-id" },
+        "en": { "type": "string", "minLength": 1 },
+        "fr": { "type": "string", "minLength": 1 },
+        "es": { "type": "string", "minLength": 1 },
+        "nl": { "type": "string", "minLength": 1 },
+        "de": { "type": "string", "minLength": 1 }
+      }}
+    ]},
+
+    "status": { "anyOf": [
+      { "$ref": "./base.schema.json#/$defs/status-id" },
+      { "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "$ref": "./base.schema.json#/$defs/status-id" },
+        "en": { "type": "string", "minLength": 1 },
+        "fr": { "type": "string", "minLength": 1 },
+        "es": { "type": "string", "minLength": 1 },
+        "nl": { "type": "string", "minLength": 1 },
+        "de": { "type": "string", "minLength": 1 }
+      }}
+    ]},
+
+    "originCountry": { "anyOf": [
+      { "$ref": "./base.schema.json#/$defs/country-id" },
+      { "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "anyOf": [{ "type": "null" }, { "$ref": "./base.schema.json#/$defs/country-id" }] },
+        "en": { "type": "string", "minLength": 1 },
+        "fr": { "type": "string", "minLength": 1 },
+        "es": { "type": "string", "minLength": 1 },
+        "nl": { "type": "string", "minLength": 1 },
+        "de": { "type": "string", "minLength": 1 }
+      }}
+    ]},
+
+    "isMarketplace": { "type": "boolean" },
+    "firstCirculationDate": { "type": ["null", "string"], "format": "date", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "warrantyExpirationDate": { "type": ["null", "string"], "format": "date", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "mileage": { "type": "object", "additionalProperties": false, "required": ["km"], "properties": {
+      "km": { "type": "integer", "minimum": 0 }
+    }},
+    "euronorm": { "anyOf": [{ "type": "null" }, { "$ref": "./base.schema.json#/$defs/euronorm-string" }] },
+    "critair": { "anyOf": [{ "type": "null" }, { "$ref": "./base.schema.json#/$defs/critair-string" }] },
+    "frenchFiscalPower": { "type": ["null", "integer"], "exclusiveMinimum": 0 },
+    "frenchGenre": { "anyOf": [{ "type": "null" }, { "$ref": "./base.schema.json#/$defs/french-genre-string" }] },
+    "belgianFiscalPower": { "type": ["null", "integer"], "exclusiveMinimum": 0 },
+    "belgianOtoto": { "type": "object", "additionalProperties": false, "required": ["url"], "properties": {
+      "url": { "type":  ["null", "string"], "format": "uri", "pattern": "^https?://" }
+    }},
+    "belgianCarpass": { "type": "object", "additionalProperties": false, "required": ["url"], "properties": {
+      "url": { "type":  ["null", "string"], "format": "uri", "pattern": "^https?://" }
+    }},
+
+    "catalogPriceWithOptionsWithTaxes": { "type": "number", "exclusiveMinimum": 0 },
+    "takeoverPremium": { "type": "number", "maximum": 0 },
+    "sellingPriceWithTaxes": { "type": "number", "exclusiveMinimum": 0 },
+    "sellingPriceWithTakeoverWithTaxes": { "type": "number", "minimum": 0 },
+
+    "indicativeLoan": { "type": "object", "additionalProperties": false, "required": ["monthlyInstallment", "months"], "properties": {
+      "monthlyInstallment": { "type": "number", "exclusiveMinimum": 0 },
+      "months": { "type": "integer", "exclusiveMinimum": 0 }
+    }},
+
+    "maker": { "type": "string", "minLength": 1 },
+    "model": { "type": "string", "minLength": 1 },
+    "engine": { "type": ["null","string"], "minLength": 1 },
+    "finish": { "type": ["null","string"], "minLength": 1 },
+    "version": { "type": ["null","string"], "minLength": 1 },
+
+    "interior": { "type": "object", "additionalProperties": false, "minProperties": 1, "properties": {
+      "en": { "type": "string", "minLength": 1 },
+      "fr": { "type": "string", "minLength": 1 },
+      "es": { "type": "string", "minLength": 1 },
+      "nl": { "type": "string", "minLength": 1 },
+      "de": { "type": "string", "minLength": 1 }
+    }},
+    "manufacturerColor": { "type": "object", "additionalProperties": false, "minProperties": 1, "properties": {
+      "en": { "type": "string", "minLength": 1 },
+      "fr": { "type": "string", "minLength": 1 },
+      "es": { "type": "string", "minLength": 1 },
+      "nl": { "type": "string", "minLength": 1 },
+      "de": { "type": "string", "minLength": 1 }
+    }},
+    "expertComments": { "type": "object", "additionalProperties": false, "minProperties": 1, "properties": {
+      "en": { "type": "string", "minLength": 1 },
+      "fr": { "type": "string", "minLength": 1 },
+      "es": { "type": "string", "minLength": 1 },
+      "nl": { "type": "string", "minLength": 1 },
+      "de": { "type": "string", "minLength": 1 }
+    }},
+
+    "media": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["type", "url"], "properties": {
+      "type": { "enum": ["photo", "video"] },
+      "url": { "type": "string", "format": "uri", "pattern": "^https?://" },
+      "orientation": { "type": "integer", "minimum": 0, "exclusiveMaximum": 360 }
+    }}},
+
+    "category": { "anyOf": [
+      { "$ref": "./base.schema.json#/$defs/category-id" },
+      { "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "$ref": "./base.schema.json#/$defs/category-id" },
+        "en": { "type": "string", "minLength": 1 },
+        "fr": { "type": "string", "minLength": 1 },
+        "es": { "type": "string", "minLength": 1 },
+        "nl": { "type": "string", "minLength": 1 },
+        "de": { "type": "string", "minLength": 1 }
+      }}
+    ]},
+
+    "segment": { "anyOf": [
+      { "type": "null" },
+      { "$ref": "./base.schema.json#/$defs/segment-id" },
+      { "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "$ref": "./base.schema.json#/$defs/segment-id" },
+        "en": { "type": "string", "minLength": 1 },
+        "fr": { "type": "string", "minLength": 1 },
+        "es": { "type": "string", "minLength": 1 },
+        "nl": { "type": "string", "minLength": 1 },
+        "de": { "type": "string", "minLength": 1 }
+      }},
+      { "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "type": "null" },
+        "en": { "type": "null" },
+        "fr": { "type": "null" },
+        "es": { "type": "null" },
+        "nl": { "type": "null" },
+        "de": { "type": "null" }
+      }}
+    ]},
+
+    "energyType": { "anyOf": [
+      { "$ref": "./base.schema.json#/$defs/energy-type-id" },
+      { "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "$ref": "./base.schema.json#/$defs/energy-type-id" },
+        "en": { "type": "string", "minLength": 1 },
+        "fr": { "type": "string", "minLength": 1 },
+        "es": { "type": "string", "minLength": 1 },
+        "nl": { "type": "string", "minLength": 1 },
+        "de": { "type": "string", "minLength": 1 }
+      }}
+    ]},
+
+    "simpleColor": { "anyOf": [
+      { "$ref": "./base.schema.json#/$defs/simple-color-id" },
+      { "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "$ref": "./base.schema.json#/$defs/simple-color-id" },
+        "en": { "type": "string", "minLength": 1 },
+        "fr": { "type": "string", "minLength": 1 },
+        "es": { "type": "string", "minLength": 1 },
+        "nl": { "type": "string", "minLength": 1 },
+        "de": { "type": "string", "minLength": 1 }
+      }}
+    ]},
+    "simpleColor2": { "anyOf": [
+      { "type": "null" },
+      { "$ref": "./base.schema.json#/$defs/simple-color-id" },
+      { "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "$ref": "./base.schema.json#/$defs/simple-color-id" },
+        "en": { "type": "string", "minLength": 1 },
+        "fr": { "type": "string", "minLength": 1 },
+        "es": { "type": "string", "minLength": 1 },
+        "nl": { "type": "string", "minLength": 1 },
+        "de": { "type": "string", "minLength": 1 }
+      }},
+      { "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "type": "null" },
+        "en": { "type": "null" },
+        "fr": { "type": "null" },
+        "es": { "type": "null" },
+        "nl": { "type": "null" },
+        "de": { "type": "null" }
+      }}
+    ]},
+    "isColorMetallic": { "type": "boolean" },
+
+    "interiorSimpleColor": { "anyOf": [
+      { "type": "null" },
+      { "$ref": "./base.schema.json#/$defs/simple-color-id" },
+      { "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "$ref": "./base.schema.json#/$defs/simple-color-id" },
+        "en": { "type": "string", "minLength": 1 },
+        "fr": { "type": "string", "minLength": 1 },
+        "es": { "type": "string", "minLength": 1 },
+        "nl": { "type": "string", "minLength": 1 },
+        "de": { "type": "string", "minLength": 1 }
+      }},
+      { "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "type": "null" },
+        "en": { "type": "null" },
+        "fr": { "type": "null" },
+        "es": { "type": "null" },
+        "nl": { "type": "null" },
+        "de": { "type": "null" }
+      }}
+    ]},
+
+    "transmission": { "anyOf": [
+      { "$ref": "./base.schema.json#/$defs/transmission-id" },
+      { "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "$ref": "./base.schema.json#/$defs/transmission-id" },
+        "en": { "type": "string", "minLength": 1 },
+        "fr": { "type": "string", "minLength": 1 },
+        "es": { "type": "string", "minLength": 1 },
+        "nl": { "type": "string", "minLength": 1 },
+        "de": { "type": "string", "minLength": 1 }
+      }}
+    ]},
+
+    "drive": { "anyOf": [
+      { "$ref": "./base.schema.json#/$defs/drive-id" },
+      { "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "$ref": "./base.schema.json#/$defs/drive-id" },
+        "en": { "type": "string", "minLength": 1 },
+        "fr": { "type": "string", "minLength": 1 },
+        "es": { "type": "string", "minLength": 1 },
+        "nl": { "type": "string", "minLength": 1 },
+        "de": { "type": "string", "minLength": 1 }
+      }}
+    ]},
+
+    "equipments": { "type": "array", "items": { "type": "object", "additionalProperties": false, "minProperties": 2, "required": ["category"], "properties": {
+      "en": { "type": "string", "minLength": 1 },
+      "fr": { "type": "string", "minLength": 1 },
+      "es": { "type": "string", "minLength": 1 },
+      "nl": { "type": "string", "minLength": 1 },
+      "de": { "type": "string", "minLength": 1 },
+      "category": { "anyOf": [
+        { "$ref": "./base.schema.json#/$defs/equipment-category-id" },
+        { "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+          "id": { "$ref": "./base.schema.json#/$defs/equipment-category-id" },
+          "en": { "type": "string", "minLength": 1 },
+          "fr": { "type": "string", "minLength": 1 },
+          "es": { "type": "string", "minLength": 1 },
+          "nl": { "type": "string", "minLength": 1 },
+          "de": { "type": "string", "minLength": 1 }
+        }}
+      ]}
+    }}},
+
+    "simpleEquipments": { "type": "array", "items": {"anyOf": [
+      { "$ref": "./base.schema.json#/$defs/simple-equipment-id" },
+      { "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "$ref": "./base.schema.json#/$defs/simple-equipment-id" },
+        "en": { "type": "string", "minLength": 1 },
+        "fr": { "type": "string", "minLength": 1 },
+        "es": { "type": "string", "minLength": 1 },
+        "nl": { "type": "string", "minLength": 1 },
+        "de": { "type": "string", "minLength": 1 }
+      }}
+    ]}},
+
+    "options": { "type": "array", "items": { "type": "object", "additionalProperties": false, "minProperties": 2, "required": ["priceWithTaxes"], "properties": {
+      "priceWithTaxes": { "type": "number" },
+      "en": { "type": "string", "minLength": 1 },
+      "fr": { "type": "string", "minLength": 1 },
+      "es": { "type": "string", "minLength": 1 },
+      "nl": { "type": "string", "minLength": 1 },
+      "de": { "type": "string", "minLength": 1 }
+    }}},
+
+    "promotions": { "type": "array", "items": { "type": "object", "additionalProperties": false, "minProperties": 2, "required": ["id"], "properties": {
+      "id": { "type": "string", "minLength": 1 },
+      "en": { "type": "string", "minLength": 1 },
+      "fr": { "type": "string", "minLength": 1 },
+      "es": { "type": "string", "minLength": 1 },
+      "nl": { "type": "string", "minLength": 1 },
+      "de": { "type": "string", "minLength": 1 }
+    }}},
+
+    "doors": { "type": ["null","integer"], "exclusiveMinimum": 0 },
+    "gears": { "type": ["null","integer"], "exclusiveMinimum": 0 },
+    "seats": { "type": ["null","integer"], "exclusiveMinimum": 0 },
+    "cylinders": { "type": ["null","integer"], "exclusiveMinimum": 0 },
+    "power": { "type": "object", "additionalProperties": false, "required": ["ch", "kw"], "properties": {
+      "ch": { "type": ["null","number"], "exclusiveMinimum": 0 },
+      "kw": { "type": ["null","number"], "exclusiveMinimum": 0 }
+    }},
+
+    "engineCapacity": { "$ref": "./base.schema.json#/$defs/nullable-engine-capacity" },
+    "urbanCycleConsumption": { "$ref": "./base.schema.json#/$defs/nullable-consumption" },
+    "extraUrbanCycleConsumption": { "$ref": "./base.schema.json#/$defs/nullable-consumption" },
+    "combinedCycleConsumption": { "$ref": "./base.schema.json#/$defs/nullable-consumption" },
+    "co2EmissionsNedc": { "$ref": "./base.schema.json#/$defs/nullable-co2-emissions" },
+    "co2EmissionsWltp": { "$ref": "./base.schema.json#/$defs/nullable-co2-emissions" },
+    "height": { "$ref": "./base.schema.json#/$defs/nullable-length" },
+    "width": { "$ref": "./base.schema.json#/$defs/nullable-length" },
+    "length": { "$ref": "./base.schema.json#/$defs/nullable-length" },
+    "wheelbase": { "$ref": "./base.schema.json#/$defs/nullable-length" },
+    "weight": { "$ref": "./base.schema.json#/$defs/nullable-weight" },
+    "totalAuthorizedWeight": { "$ref": "./base.schema.json#/$defs/nullable-weight" },
+    "minBootSpaceBackCapacity": { "$ref": "./base.schema.json#/$defs/nullable-volume" },
+    "maxBootSpaceBackCapacity": { "$ref": "./base.schema.json#/$defs/nullable-volume" },
+    "bootSpaceFrontCapacity": { "$ref": "./base.schema.json#/$defs/nullable-volume" },
+    "maxSpeed": { "$ref": "./base.schema.json#/$defs/nullable-speed" },
+    "electricRangeNedc": { "$ref": "./base.schema.json#/$defs/nullable-distance" },
+    "electricRangeWltp": { "$ref": "./base.schema.json#/$defs/nullable-distance" },
+    "electricBatteryWarrantyPeriod": { "$ref": "./base.schema.json#/$defs/nullable-warranty-period" },
+    "electricBatteryStateOfHealth": { "$ref": "./base.schema.json#/$defs/nullable-percent-0-100" },
+    "electricBatteryCapacity": { "$ref": "./base.schema.json#/$defs/nullable-energy" },
+    "electricBatteryType": { "type": ["null","string"], "minLength": 1 },
+    "electricBatterySlowChargePower": { "$ref": "./base.schema.json#/$defs/nullable-power" },
+    "electricBatterySlowChargeTime": { "$ref": "./base.schema.json#/$defs/nullable-duration-minutes" },
+    "electricBatteryMediumChargePower": { "$ref": "./base.schema.json#/$defs/nullable-power" },
+    "electricBatteryMediumChargeTime": { "$ref": "./base.schema.json#/$defs/nullable-duration-minutes" },
+    "electricBatteryQuickChargePower": { "$ref": "./base.schema.json#/$defs/nullable-power" },
+    "electricBatteryQuickChargeTime": { "$ref": "./base.schema.json#/$defs/nullable-duration-minutes" },
+    "electricBatteryCost": { "type": ["null","number"], "exclusiveMinimum": 0 },
+    "electricMaximumPowerCarElectricalOutlet": { "$ref": "./base.schema.json#/$defs/nullable-power" },
+    "electricMaximumPowerCarDirectCurrent": { "$ref": "./base.schema.json#/$defs/nullable-current" }
+  },
+  "required": [
+    "vin",
+    "offerId",
+    "vehicleId",
+    "offerType",
+    "status",
+    "originCountry",
+    "isMarketplace",
+    "firstCirculationDate",
+    "warrantyExpirationDate",
+    "mileage",
+    "euronorm",
+    "critair",
+    "frenchFiscalPower",
+    "frenchGenre",
+    "belgianFiscalPower",
+    "belgianOtoto",
+    "belgianCarpass",
+    "catalogPriceWithOptionsWithTaxes",
+    "takeoverPremium",
+    "sellingPriceWithTaxes",
+    "sellingPriceWithTakeoverWithTaxes",
+    "indicativeLoan",
+    "maker",
+    "model",
+    "version",
+    "engine",
+    "finish",
+    "manufacturerColor",
+    "interior",
+    "expertComments",
+    "media",
+    "category",
+    "segment",
+    "energyType",
+    "simpleColor",
+    "simpleColor2",
+    "interiorSimpleColor",
+    "transmission",
+    "drive",
+    "equipments",
+    "simpleEquipments",
+    "options",
+    "promotions",
+    "doors",
+    "gears",
+    "seats",
+    "cylinders",
+    "power",
+    "engineCapacity",
+    "urbanCycleConsumption",
+    "extraUrbanCycleConsumption",
+    "combinedCycleConsumption",
+    "co2EmissionsNedc",
+    "co2EmissionsWltp",
+    "height",
+    "width",
+    "length",
+    "wheelbase",
+    "weight",
+    "totalAuthorizedWeight",
+    "minBootSpaceBackCapacity",
+    "maxBootSpaceBackCapacity",
+    "bootSpaceFrontCapacity",
+    "maxSpeed",
+    "electricRangeNedc",
+    "electricRangeWltp",
+    "electricBatteryWarrantyPeriod",
+    "electricBatteryStateOfHealth",
+    "electricBatteryCapacity",
+    "electricBatteryType",
+    "electricBatterySlowChargePower",
+    "electricBatterySlowChargeTime",
+    "electricBatteryMediumChargePower",
+    "electricBatteryMediumChargeTime",
+    "electricBatteryQuickChargePower",
+    "electricBatteryQuickChargeTime",
+    "electricBatteryCost",
+    "electricMaximumPowerCarElectricalOutlet",
+    "electricMaximumPowerCarDirectCurrent"
+  ]
+}
