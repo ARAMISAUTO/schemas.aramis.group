@@ -1,4 +1,21 @@
 {
   "$schema": "https://schemas.aramis.group/catalog/search-response.schema.json"
-
+  "total": 235,
+  "limit": 100,
+  "offset": 0,
+  "vehicles": [
+    {
+      "category": {
+        "id": "station-wagon",
+        "label": "Station wagon"
+      }
+    }
+  ],
+  "facets": [
+    {
+      "category": [
+        { "value": { "id": "station-wagon", "label": "Station wagon" }, "count": 123 }
+      ]
+    }
+  ]
 }
