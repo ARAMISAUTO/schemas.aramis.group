@@ -348,5 +348,12 @@
         "count": { "type":  "integer", "exclusiveMinimum": 0 }
       }}}
     }}}
-  }
+  },
+  "required": [
+    "total",
+    "limit",
+    "offset",
+    "vehicles",
+    "facets"
+  ]
 }

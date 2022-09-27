@@ -1,5 +1,5 @@
 {
-  "$schema": "../catalog/vehicle-single-language-output.schema.json",
+  "$schema": "https://schemas.aramis.group/catalog/vehicle-single-language-output.schema.json",
 
   "vin": "A33292072034SMPW3",
   "offerId": "23235345",

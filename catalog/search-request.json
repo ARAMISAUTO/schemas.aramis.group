@@ -1,5 +1,5 @@
 {
-  "$schema": "../catalog/search-request.schema.json",
+  "$schema": "https://schemas.aramis.group/catalog/search-request.schema.json",
   "criteria": {
     "text": "test",
     "offerId": { "in": [ "123" ] },

@@ -1,5 +1,5 @@
 {
-  "$schema": "../catalog/vehicle-multi-language-input.schema.json",
+  "$schema": "https://schemas.aramis.group/catalog/vehicle-multi-language-input.schema.json",
   "vin": "01234567891234567",
   "offerId": "111",
   "vehicleId": "111a",

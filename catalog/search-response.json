@@ -1,13 +1,4 @@
 {
-  "$schema": "../catalog/search-response.schema.json",
+  "$schema": "https://schemas.aramis.group/catalog/search-response.schema.json"
 
-  "type": "object",
-  "additionalProperties": false,
-  "properties": {
-
-    "offers": { "type": "array", "items": {
-
-    }
-  },
-  }
 }
