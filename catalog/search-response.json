@@ -1,5 +1,5 @@
 {
-  "$schema": "https://schemas.aramis.group/catalog/search-response.schema.json"
+  "$schema": "https://schemas.aramis.group/catalog/search-response.schema.json",
   "total": 235,
   "limit": 100,
   "offset": 0,
