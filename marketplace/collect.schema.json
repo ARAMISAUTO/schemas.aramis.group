@@ -1,0 +1,65 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "collector": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "partnerName": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "aramisautoSupplierId": {
+                    "type": "integer"
+                },
+                "aramisautoPickupPointId": {
+                    "type": "integer"
+                },
+                "purchasingVatRate": {
+                    "type": "number"
+                },
+                "disable": {
+                    "type": "boolean"
+                },
+                "sellermaniaOutput": {
+                    "type": "string"
+                },
+                "collectOnly": {
+                    "type": "boolean"
+                },
+                "language": {
+                    "type": "string"
+                },
+                "format": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "escape": {
+                            "type": "string"
+                        },
+                        "enclosure": {
+                            "type": "string"
+                        },
+                        "separator": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "required": [
+                "partnerName",
+                "url"
+            ]
+        }
+    },
+    "required": [
+        "collector"
+    ]
+}

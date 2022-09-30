@@ -1,0 +1,694 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "mapper": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "input": {
+                    "type": "object"
+                },
+                "vehicle": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "vin": {
+                            "type": ["string","null"]
+                        },
+                        "partnerVehicleId": {
+                            "type": ["string","null"]
+                        },
+                        "partnerOfferId": {
+                            "type": ["string","null"]
+                        },
+                        "offerType": {
+                            "type": ["string","null"]
+                        },
+                        "countryCode": {
+                            "type": ["string","null"]
+                        },
+                        "firstCirculationDate": {
+                            "type": ["string","null"]
+                        },
+                        "warrantyExpirationDate": {
+                            "type": ["string","null"]
+                        },
+                        "temporaryRegistrationPlate": {
+                            "type": ["string","null"]
+                        },
+                        "definitiveRegistrationPlate": {
+                            "type": ["string","null"]
+                        },
+                        "genre": {
+                            "type": ["string","null"]
+                        },
+                        "mileage": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "km": {
+                                    "type": ["string","null","number"]
+                                },
+                                "miles": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "pictures": {
+                            "type": ["string","null","array"],
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "expertComments": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "en": {
+                                    "type": ["string","null"]
+                                },
+                                "fr": {
+                                    "type": ["string","null"]
+                                },
+                                "es": {
+                                    "type": ["string","null"]
+                                },
+                                "nl": {
+                                    "type": ["string","null"]
+                                },
+                                "de": {
+                                    "type": ["string","null"]
+                                }
+                            }
+                        },
+                        "currency": {
+                            "type": ["string","null","number"]
+                        },
+                        "catalogPriceWithOptionsWithTaxes": {
+                            "type": ["string","null","number"]
+                        },
+                        "purchasingPriceWithoutTaxes": {
+                            "type": ["string","null","number"]
+                        },
+                        "purchasingVatRate": {
+                            "type": ["string","null","number"]
+                        },
+                        "isPurchasingVatRefundable": {
+                            "type": ["string","null","boolean"]
+                        },
+                        "marginWithoutTaxes": {
+                            "type": ["string","null","number"]
+                        },
+                        "aramisautoPurchasingPriceWithoutTaxes": {
+                            "type": ["string","null","number"]
+                        },
+                        "aramisautoPurchasingPriceWithTaxes": {
+                            "type": ["string","null","number"]
+                        },
+                        "aramisautoSellingPriceWithoutTaxes": {
+                            "type": ["string","null","number"]
+                        },
+                        "aramisautoSellingPriceWithTaxes": {
+                            "type": ["string","null","number"]
+                        },
+                        "brand": {
+                            "type": ["string","null"]
+                        },
+                        "model": {
+                            "type": ["string","null"]
+                        },
+                        "version": {
+                            "type": ["string","null"]
+                        },
+                        "engine": {
+                            "type": ["string","null"]
+                        },
+                        "finish": {
+                            "type": ["string","null"]
+                        },
+                        "interior": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "en": {
+                                    "type": ["string","null"]
+                                },
+                                "fr": {
+                                    "type": ["string","null"]
+                                },
+                                "es": {
+                                    "type": ["string","null"]
+                                },
+                                "nl": {
+                                    "type": ["string","null"]
+                                },
+                                "de": {
+                                    "type": ["string","null"]
+                                }
+                            }
+                        },
+                        "manufacturerColor": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "en": {
+                                    "type": ["string","null"]
+                                },
+                                "fr": {
+                                    "type": ["string","null"]
+                                },
+                                "es": {
+                                    "type": ["string","null"]
+                                },
+                                "nl": {
+                                    "type": ["string","null"]
+                                },
+                                "de": {
+                                    "type": ["string","null"]
+                                }
+                            }
+                        },
+                        "aramisautoSimpleColor": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "id": {
+                                    "type": ["string","null","number"]
+                                },
+                                "en": {
+                                    "type": ["string","null"]
+                                },
+                                "fr": {
+                                    "type": ["string","null"]
+                                },
+                                "es": {
+                                    "type": ["string","null"]
+                                },
+                                "nl": {
+                                    "type": ["string","null"]
+                                },
+                                "de": {
+                                    "type": ["string","null"]
+                                }
+                            }
+                        },
+                        "aramisautoCategory": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "id": {
+                                    "type": ["string","null","number"]
+                                },
+                                "en": {
+                                    "type": ["string","null"]
+                                },
+                                "fr": {
+                                    "type": ["string","null"]
+                                },
+                                "es": {
+                                    "type": ["string","null"]
+                                },
+                                "nl": {
+                                    "type": ["string","null"]
+                                },
+                                "de": {
+                                    "type": ["string","null"]
+                                }
+                            }
+                        },
+                        "aramisautoBodywork": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "id": {
+                                    "type": ["string","null","number"]
+                                },
+                                "en": {
+                                    "type": ["string","null"]
+                                },
+                                "fr": {
+                                    "type": ["string","null"]
+                                },
+                                "es": {
+                                    "type": ["string","null"]
+                                },
+                                "nl": {
+                                    "type": ["string","null"]
+                                },
+                                "de": {
+                                    "type": ["string","null"]
+                                }
+                            }
+                        },
+                        "aramisautoEnergyType": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "id": {
+                                    "type": ["string","null","number"]
+                                },
+                                "en": {
+                                    "type": ["string","null"]
+                                },
+                                "fr": {
+                                    "type": ["string","null"]
+                                },
+                                "es": {
+                                    "type": ["string","null"]
+                                },
+                                "nl": {
+                                    "type": ["string","null"]
+                                },
+                                "de": {
+                                    "type": ["string","null"]
+                                }
+                            }
+                        },
+                        "transmission": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "id": {
+                                    "type": ["string","null"]
+                                },
+                                "en": {
+                                    "type": ["string","null"]
+                                },
+                                "fr": {
+                                    "type": ["string","null"]
+                                },
+                                "es": {
+                                    "type": ["string","null"]
+                                },
+                                "nl": {
+                                    "type": ["string","null"]
+                                },
+                                "de": {
+                                    "type": ["string","null"]
+                                }
+                            }
+                        },
+                        "equipments": {
+                            "type": ["string","null","array"],
+                            "items": {
+                                "type": ["string","null","object"],
+                                "additionalProperties": false,
+                                "properties": {
+                                    "en": {
+                                        "type": ["string","null"]
+                                    },
+                                    "fr": {
+                                        "type": ["string","null"]
+                                    },
+                                    "es": {
+                                        "type": ["string","null"]
+                                    },
+                                    "nl": {
+                                        "type": ["string","null"]
+                                    },
+                                    "de": {
+                                        "type": ["string","null"]
+                                    }
+                                }
+                            }
+                        },
+                        "options": {
+                            "type": ["string","null","array"],
+                            "items": {
+                                "type": ["string","null","object"],
+                                "additionalProperties": false,
+                                "properties": {
+                                    "price": {
+                                        "type": ["string","null","number"]
+                                    },
+                                    "en": {
+                                        "type": ["string","null"]
+                                    },
+                                    "fr": {
+                                        "type": ["string","null"]
+                                    },
+                                    "es": {
+                                        "type": ["string","null"]
+                                    },
+                                    "nl": {
+                                        "type": ["string","null"]
+                                    },
+                                    "de": {
+                                        "type": ["string","null"]
+                                    }
+                                }
+                            }
+                        },
+                        "aramisautoPictograms": {
+                            "type": ["string","null","array"],
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "id": {
+                                        "type": ["string","null","number"]
+                                    },
+                                    "en": {
+                                        "type": ["string","null"]
+                                    },
+                                    "fr": {
+                                        "type": ["string","null"]
+                                    },
+                                    "es": {
+                                        "type": ["string","null"]
+                                    },
+                                    "nl": {
+                                        "type": ["string","null"]
+                                    },
+                                    "de": {
+                                        "type": ["string","null"]
+                                    }
+                                }
+                            }
+                        },
+                        "doors": {
+                            "type": ["string","null","number"]
+                        },
+                        "gears": {
+                            "type": ["string","null","number"]
+                        },
+                        "seats": {
+                            "type": ["string","null","number"]
+                        },
+                        "power": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "hp": {
+                                    "type": ["string","null","number"]
+                                },
+                                "kw": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "fiscalPower": {
+                            "type": ["string","null","number"]
+                        },
+                        "engineCapacity": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "cc": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "urbanCycleConsumption": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "ltPer100Km": {
+                                    "type": ["string","null","number"]
+                                },
+                                "mpg": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "extraUrbanCycleConsumption": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "ltPer100Km": {
+                                    "type": ["string","null","number"]
+                                },
+                                "mpg": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "combinedCycleConsumption": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "ltPer100Km": {
+                                    "type": ["string","null","number"]
+                                },
+                                "mpg": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "co2EmissionNedc": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "gramsPerKm": {
+                                    "type": ["string","null","number"]
+                                },
+                                "gramsPerMile": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "co2EmissionWltp": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "gramsPerKm": {
+                                    "type": ["string","null","number"]
+                                },
+                                "gramsPerMile": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "height": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "meters": {
+                                    "type": ["string","null","number"]
+                                },
+                                "feet": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "width": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "meters": {
+                                    "type": ["string","null","number"]
+                                },
+                                "feet": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "length": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "meters": {
+                                    "type": ["string","null","number"]
+                                },
+                                "feet": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "wheelbase": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "meters": {
+                                    "type": ["string","null","number"]
+                                },
+                                "feet": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "unloadedWeight": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "kg": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "totalAuthorizedWeight": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "kg": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "minimumBootSpaceBackCapacity": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "lt": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "maximumBootSpaceBackCapacity": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "lt": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "electricRangeNedc": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "km": {
+                                    "type": ["string","null","number"]
+                                },
+                                "miles": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "electricRangeWltp": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "km": {
+                                    "type": ["string","null","number"]
+                                },
+                                "miles": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "electricBatteryWarrantyPeriod": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "years": {
+                                    "type": ["string","null","number"]
+                                },
+                                "km": {
+                                    "type": ["string","null","number"]
+                                },
+                                "miles": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "electricBatteryStateOfHealthPercent": {
+                            "type": ["string","null","number"]
+                        },
+                        "electricBatteryCapacity": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "kwh": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "electricBatteryType": {
+                            "type": ["string","null"]
+                        },
+                        "electricBatterySlowChargePower": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "kw": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "electricBatterySlowChargeTime": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "minutes": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "electricBatteryMediumChargePower": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "kw": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "electricBatteryMediumChargeTime": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "minutes": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "electricBatteryQuickChargePower": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "kw": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "electricBatteryQuickChargeTime": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "minutes": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "electricBatteryCost": {
+                            "type": ["string","null","number"]
+                        },
+                        "electricMaximumPowerCarElectricalOutlet": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "kw": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "electricMaximumPowerCarDirectCurrent": {
+                            "type": ["string","null","object"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "ampere": {
+                                    "type": ["string","null","number"]
+                                }
+                            }
+                        },
+                        "aramisautoPickupPointId": {
+                            "type": ["string","null","integer"]
+                        }
+                    },
+                    "required": [
+                        "partnerVehicleId"
+                    ]
+                }
+            },
+            "required": [
+                "vehicle"
+            ]
+        }
+    },
+    "required": [
+        "mapper"
+    ]
+}

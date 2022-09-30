@@ -1,4 +1,4 @@
-## Catalog
+# Catalog
 
 ### Vehicle Multi Language Input
 
@@ -34,3 +34,11 @@ This is the response of a search request.
 
 * [Schema](/catalog/search-response.schema.json)
 * [Example](/catalog/search-response.json)
+
+# Marketplace
+
+### Partner configuration files
+
+* [Collect](/marketplace/collect.schema.json)
+* [Map](/marketplace/map.schema.json)
+* [Filter](/marketplace/filter.schema.json)
