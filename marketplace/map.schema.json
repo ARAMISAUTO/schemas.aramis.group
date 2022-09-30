@@ -86,7 +86,7 @@
                         "currency": {
                             "type": ["string","null","number"]
                         },
-                        "catalogPriceWithOptionsWithTaxes": {
+                        "catalogPriceWithoutOptionsWithTaxes": {
                             "type": ["string","null","number"]
                         },
                         "purchasingPriceWithoutTaxes": {
