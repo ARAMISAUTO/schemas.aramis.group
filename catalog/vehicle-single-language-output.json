@@ -80,7 +80,7 @@
     { "label": "GPS", "priceWithTaxes": 300.0 }
   ],
   "promotions": [
-    { "id": "12345", "label": "Super Deal" }
+    { "id": "12345", "label": "Super Deal", "color": "#AA0023" }
   ],
   "doors": 5,
   "gears": 5,

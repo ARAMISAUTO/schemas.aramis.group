@@ -124,6 +124,7 @@
     "options.priceWithTaxes",
     "promotions.id",
     "promotions.label",
+    "promotions.color",
     "doors",
     "gears",
     "seats",

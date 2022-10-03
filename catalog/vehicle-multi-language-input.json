@@ -42,7 +42,7 @@
   "equipments": [{"en": "some equipment", "category": "comfort"}],
   "simpleEquipments": ["4x4", "android-auto" ],
   "options": [{"es": "una option", "priceWithTaxes": 120}],
-  "promotions": [{"id": "aaa", "en":"aaa"}],
+  "promotions": [{"id": "aaa", "en":"aaa", "color": "#008888"}],
   "doors":5,
   "gears":5,
   "seats":5,
