@@ -6,7 +6,6 @@
   "vehicleId": "2342523523455",
   "offerType": { "id": "new", "label": "Voiture neuve" },
   "status": { "id": "sold", "label": "Ventu" },
-  "originCountry": { "id": "ESP", "label": "Espagne" },
   "isMarketplace": false,
   "firstCirculationDate": "2010-10-20",
   "warrantyExpirationDate": "2010-10-20",
