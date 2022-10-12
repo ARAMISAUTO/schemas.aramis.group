@@ -74,7 +74,6 @@
       "model": { "type": "string", "minLength": 1 },
       "engine": { "type": "string", "minLength": 0 },
       "finish": { "type": "string", "minLength": 0 },
-      "version": { "type": "string", "minLength": 0 },
       "interior": { "type": "string", "minLength": 0 },
       "manufacturerColor": { "type": "string", "minLength": 1 },
       "expertComments": { "type": "string", "minLength": 0 },

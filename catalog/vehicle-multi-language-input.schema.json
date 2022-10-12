@@ -77,7 +77,6 @@
     "model": { "type": "string", "minLength": 1 },
     "engine": { "type": ["null","string"], "minLength": 1 },
     "finish": { "type": ["null","string"], "minLength": 1 },
-    "version": { "type": ["null","string"], "minLength": 1 },
 
     "interior": { "type": "object", "additionalProperties": false, "minProperties": 1, "properties": {
       "en": { "type": "string", "minLength": 1 },
@@ -346,7 +345,6 @@
     "indicativeLoan",
     "maker",
     "model",
-    "version",
     "engine",
     "finish",
     "manufacturerColor",
