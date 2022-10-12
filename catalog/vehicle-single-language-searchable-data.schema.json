@@ -8,8 +8,8 @@
     "offer_id": { "type": "string", "minLength": 1 },
     "vehicle_ids": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
     "variant_vehicle_ids": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
-    "variant_manufacturer_colors": { "type": "array", "minItems": 0, "items": { "type": "string", "minLength": 1 } },
-    "variant_photo_urls": { "type": "array", "items": { "type": "string", "format": "uri", "pattern": "^https?://" } },
+    "variant_manufacturer_colors": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+    "variant_photo_urls": { "type": "array", "minItems": 1, "items": { "type": "string", "format": "uri", "pattern": "^https?://" } },
     "variant_simple_color_ids": { "type": "array", "minItems": 1, "items": { "$ref": "./base.schema.json#/$defs/simple-color-id" } },
     "variant_simple_color_labels": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
     "offer_type_id": { "$ref": "./base.schema.json#/$defs/offer-type-id" },
@@ -62,7 +62,7 @@
     "power_kw": { "type": ["null","number"], "exclusiveMinimum": 0 },
     "engine_capacity_cc": { "type": ["null","number"], "exclusiveMinimum": 0 },
     "combined_cycle_consumption_lt_per_100km": { "type": ["null","number"], "exclusiveMinimum": 0 },
-    "combined_cycle_consumption_kwh_per_100km": { "type": ["null","number"], "exclusiveMinimum": 0 },
+    "combined_cycle_consumption_kwh_per_100km": { "type": ["null","number"], "exclusiveMinimum": 0 }
   },
   "required": [
     "offer_id",
