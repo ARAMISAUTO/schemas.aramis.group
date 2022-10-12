@@ -1,5 +1,5 @@
 {
-  "$schema": "../catalog/vehicle-single-language-searchable-data.schema.json",
+  "$schema": "https://schemas.aramis.group/catalog/vehicle-single-language-searchable-data.schema.json",
   "offer_id": "2342",
   "vehicle_ids": ["2342342", "2352526"],
   "variant_vehicle_ids": ["2342342", "2352526"],
