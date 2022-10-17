@@ -118,8 +118,8 @@
       "combined_cycle_consumption.lt_per_100_km": { "enum": ["asc", "desc"] },
       "combined_cycle_consumption.kwh_per_100_km": { "enum": ["asc", "desc"] }
     }}},
-    "limit": { "type": "integer", "minimum": 0, "default": 100 },
-    "offset": { "type": "integer", "minimum": 0, "default": 0 },
+    "page_size": { "type": "integer", "minimum": 0, "default": 100 },
+    "current_page": { "type": "integer", "minimum": 0, "default": 0 },
     "fields": { "type": "array", "uniqueItems": true, "items": { "enum": [
       "vin",
       "offer_id",
