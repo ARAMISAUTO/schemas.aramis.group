@@ -5,7 +5,7 @@
   "offerId": "23235345",
   "vehicleId": "2342523523455",
   "offerType": { "id": "new", "label": "Voiture neuve" },
-  "status": { "id": "sold", "label": "Ventu" },
+  "status": { "id": "available", "label": "Disponible" },
   "isMarketplace": false,
   "firstCirculationDate": "2010-10-20",
   "warrantyExpirationDate": "2010-10-20",
@@ -27,6 +27,7 @@
   "variants": [
     {
       "vehicleId": "2342523523455",
+      "status": { "id": "available", "label": "Disponible" },
       "manufacturerColor": "Rouge anthracite",
       "simpleColor": { "id": "red", "label": "Rouge" },
       "simpleColor2": { "id": null, "label": null },
@@ -34,6 +35,7 @@
     },
     {
       "vehicleId": "2342523523452",
+      "status": { "id": "reserved", "label": "Réservé" },
       "manufacturerColor": "Bleu anthracite",
       "simpleColor": { "id": "blue", "label": "Bleu" },
       "simpleColor2": { "id": null, "label": null },

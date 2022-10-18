@@ -31,7 +31,7 @@
     "promotion_ids": { "type": "array", "items": { "type": "string", "minLength": 1}, "description": "la liste des tags id de l'offre" },
     "promotion_labels": { "type": "array", "items": { "type": "string", "minLength": 1}, "description": "la liste des tags label de l'offre" },
     "promotion_colors": { "type": "array", "items": { "type": "string", "pattern": "^#[a-fA-F0-9]{6}$" }, "description": "la liste des couleurs des tags de l'offre" },
-    "variant_photo_urls": { "type": "array", "minItems": 1, "items": { "type": "string", "format": "uri", "pattern": "^https?://" }, "description": "la liste des urls des 1ere photos des véhicules de l'offre correspondant à variant_vehicles_ids" },
+    "variant_photo_urls": { "type": "array", "minItems": 1, "items": { "type": ["null","string"], "format": "uri", "pattern": "^https?://" }, "description": "la liste des urls des 1ere photos des véhicules de l'offre correspondant à variant_vehicles_ids" },
     "simple_equipment_ids": { "type": "array", "minItems": 0, "items": { "$ref": "./base.schema.json#/$defs/simple-equipment-id", "type": "string" }, "description": "les pictogrammes du 1er véhicule de l'offre (les véhicules d'une même offre ont les même pictogrammes)" },
     "simple_equipment_labels": { "type": "array", "minItems": 0, "items": { "type": "string", "minLength": 1}, "description": "les pictogrammes du 1er véhicule de l'offre (les véhicules d'une même offre ont les même pictogrammes)" },
 

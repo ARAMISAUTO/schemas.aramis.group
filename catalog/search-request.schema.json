@@ -151,6 +151,8 @@
       "indicativeLoan.monthlyInstallment",
       "indicativeLoan.months",
       "variants.vehicleId",
+      "variants.status.id",
+      "variants.status.label",
       "variants.manufacturerColor",
       "variants.simpleColor.id",
       "variants.simpleColor.label",
