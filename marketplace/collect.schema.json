@@ -1,8 +1,6 @@
 {
-    "$id": "https://schemas.aramis.group/marketplace/collect.schema.json",
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "http://json-schema.org/draft/2020-12/schema",
     "type": "object",
-    "additionalProperties": false,
     "properties": {
         "collector": {
             "type": "object",
@@ -30,14 +28,16 @@
                     "type": "boolean"
                 },
                 "language": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": ["fr", "es", "en", "nl", "de"]
                 },
                 "format": {
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
                         "type": {
-                            "type": "string"
+                            "type": "string",
+                            "enum": ["csv"]
                         },
                         "escape": {
                             "type": "string"
@@ -47,6 +47,43 @@
                         },
                         "separator": {
                             "type": "string"
+                        }
+                    }
+                },
+                "secondaryEntries": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "maxProperties": 3,
+                    "patternProperties": {
+                        "^[A-Za-z0-9_]": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "additionalProperties": false,
+                                "join": {
+                                    "type": "string"
+                                },
+                                "on": {
+                                    "type": "string"
+                                },
+                                "url": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "enum": ["csv"]
+                                },
+                                "escape": {
+                                    "type": "string"
+                                },
+                                "enclosure": {
+                                    "type": "string"
+                                },
+                                "separator": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": ["join", "on", "url"]
                         }
                     }
                 }
