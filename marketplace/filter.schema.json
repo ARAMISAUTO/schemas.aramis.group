@@ -14,7 +14,10 @@
                         "type": "string"
                     }
                 }
-            }
+            },
+            "required": [
+                "rules"
+            ]
         }
     },
     "required": [
