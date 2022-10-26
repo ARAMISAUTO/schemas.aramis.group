@@ -1,6 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schemas.aramis.group/marketplace/collect.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
+    "additionalProperties": false,
     "properties": {
         "collector": {
             "type": "object",
@@ -28,7 +30,6 @@
                     "type": "boolean"
                 },
                 "language": {
-                    "type": "string",
                     "enum": ["fr", "es", "en", "nl", "de"]
                 },
                 "format": {
@@ -36,7 +37,6 @@
                     "additionalProperties": false,
                     "properties": {
                         "type": {
-                            "type": "string",
                             "enum": ["csv"]
                         },
                         "escape": {
@@ -55,7 +55,7 @@
                     "additionalProperties": false,
                     "maxProperties": 3,
                     "patternProperties": {
-                        "^[A-Za-z0-9_]": {
+                        "^[A-Za-z0-9_]+$": {
                             "type": "object",
                             "additionalProperties": false,
                             "properties": {
@@ -70,7 +70,6 @@
                                     "type": "string"
                                 },
                                 "type": {
-                                    "type": "string",
                                     "enum": ["csv"]
                                 },
                                 "escape": {
