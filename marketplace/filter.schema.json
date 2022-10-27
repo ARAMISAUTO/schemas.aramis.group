@@ -13,6 +13,9 @@
                     "items": {
                         "type": "string"
                     }
+                },
+                "checkVehicleDuplicated": {
+                    "type": "boolean"
                 }
             },
             "required": [
