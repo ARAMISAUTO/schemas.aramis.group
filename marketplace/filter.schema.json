@@ -14,9 +14,9 @@
                         "type": "string"
                     }
                 },
-                "checkVehicleDuplicated": {
+                "removeDuplicates": {
                     "type": "boolean",
-                    "default": false
+                    "default": true
                 }
             },
             "required": [
