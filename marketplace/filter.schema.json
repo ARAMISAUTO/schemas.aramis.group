@@ -13,6 +13,10 @@
                     "items": {
                         "type": "string"
                     }
+                },
+                "removeDuplicates": {
+                    "type": "boolean",
+                    "default": true
                 }
             },
             "required": [
