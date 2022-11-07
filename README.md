@@ -42,3 +42,4 @@ This is the response of a search request.
 * [Collect](/marketplace/collect.schema.json)
 * [Map](/marketplace/map.schema.json)
 * [Filter](/marketplace/filter.schema.json)
+* [Enrich](/marketplace/enrich.schema.json)

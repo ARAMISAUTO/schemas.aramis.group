@@ -1,0 +1,34 @@
+{
+    "$id": "https://schemas.aramis.group/marketplace/enrich.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "enrichers": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "weight": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "category": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "electricCo2Emission": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "pictogram": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "priceComputation": {
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        }
+    }
+}
