@@ -111,19 +111,6 @@
                                         "enabled": {
                                             "type": "boolean",
                                             "default": false
-                                        }
-                                    }
-                                },
-                                "cropMarginAuto": {
-                                    "type": "object",
-                                    "additionalProperties": false,
-                                    "description": "List of crop margin auto",
-                                    "minProperties": 1,
-                                    "maxProperties": 2,
-                                    "properties": {
-                                        "enabled": {
-                                            "type": "boolean",
-                                            "default": false
                                         },
                                         "parameters": {
                                             "type": "array",
