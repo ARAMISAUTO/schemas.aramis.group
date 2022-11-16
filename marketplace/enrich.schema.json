@@ -35,7 +35,11 @@
                     "maxProperties": 2,
                     "description": "Configuration to apply picture optimizer",
                     "properties": {
-                        "active": false,
+                        "active": {
+                            "type": "boolean",
+                            "default": false,
+                            "description": "By default, picture optimization is disabled for all partners"
+                        },
                         "operations": {
                             "type": "object",
                             "additionalProperties": false,
@@ -78,7 +82,10 @@
                                             "type": "boolean"
                                         },
                                         "keywords" : {
-                                            "type": "object",
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            },
                                             "minProperties": 1
                                         }
                                     },
