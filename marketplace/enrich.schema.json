@@ -11,73 +11,66 @@
                 "weight": {
                     "type": "object",
                     "additionalProperties": false,
-                    "minProperties": 1,
-                    "maxProperties": 1,
                     "description": "Enabled/disable weight enricher",
                     "properties": {
                         "enabled": {
                             "type": "boolean",
                             "default": false
                         }
-                    }
+                    },
+                    "required": ["enabled"]
                 },
                 "category": {
                     "type": "object",
                     "additionalProperties": false,
-                    "minProperties": 1,
-                    "maxProperties": 1,
                     "description": "Enabled/disable category enricher",
                     "properties": {
                         "enabled": {
                             "type": "boolean",
                             "default": false
                         }
-                    }
+                    },
+                    "required": ["enabled"]
                 },
                 "electricCo2Emission": {
                     "type": "object",
                     "additionalProperties": false,
-                    "minProperties": 1,
-                    "maxProperties": 1,
                     "description": "Enabled/disable electric co2 emission enricher",
                     "properties": {
                         "enabled": {
                             "type": "boolean",
                             "default": true
                         }
-                    }
+                    },
+                    "required": ["enabled"]
                 },
                 "pictogram": {
                     "type": "object",
                     "additionalProperties": false,
-                    "minProperties": 1,
-                    "maxProperties": 1,
                     "description": "Enabled/disable pictogram enricher",
                     "properties": {
                         "enabled": {
                             "type": "boolean",
                             "default": true
                         }
-                    }
+                    },
+                    "required": ["enabled"]
                 },
                 "priceComputation": {
                     "type": "object",
                     "additionalProperties": false,
-                    "minProperties": 1,
-                    "maxProperties": 1,
                     "description": "Enabled/disable price computation enricher",
                     "properties": {
                         "enabled": {
                             "type": "boolean",
                             "default": true
                         }
-                    }
+                    },
+                    "required": ["enabled"]
                 },
                 "pictureOptimizer": {
                     "type": "object",
                     "additionalProperties": false,
-                    "minProperties": 1,
-                    "maxProperties": 2,
                     "description": "Enabled/disable picture optimizer enricher",
                     "properties": {
                         "enabled": {
@@ -85,158 +78,124 @@
                             "default": false,
                             "description": "By default, picture optimization is disabled for all partners"
                         },
-                        "operations": {
+                        "crop": {
                             "type": "object",
                             "additionalProperties": false,
-                            "description": "List of operations (filters) to apply on picture",
                             "properties": {
-                                "crop": {
-                                    "type": "object",
-                                    "additionalProperties": false,
-                                    "minProperties": 1,
-                                    "maxProperties": 1,
-                                    "properties": {
-                                        "enabled": {
-                                            "type": "boolean",
-                                            "default": false
-                                        }
-                                    }
-                                },
-                                "cropMargin": {
-                                    "type": "object",
-                                    "additionalProperties": false,
-                                    "minProperties": 1,
-                                    "maxProperties": 1,
-                                    "properties": {
-                                        "enabled": {
-                                            "type": "boolean",
-                                            "default": false
-                                        },
-                                        "parameters": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "number",
-                                                "minimum": 0,
-                                                "maximum": 1
-                                            },
-                                            "additionalProperties": false,
-                                            "minProperties": 4,
-                                            "maxProperties": 4
-                                        }
-                                    },
-                                    "if": {
-                                        "properties": {
-                                            "enabled": true
-                                        }
-                                    },
-                                    "then": {
-                                        "properties": {
-                                            "parameters": {
-                                                "minLength": 4
-                                            }
-                                        }
-                                    }
-                                },
-                                "blurKeywords": {
-                                    "type": "object",
-                                    "additionalProperties": false,
-                                    "description": "Keywords for blur",
-                                    "minProperties": 1,
-                                    "maxProperties": 2,
-                                    "properties": {
-                                        "enabled": {
-                                            "type": "boolean",
-                                            "default": false
-                                        },
-                                        "parameters": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "string"
-                                            },
-                                            "additionalProperties": false
-                                        }
-                                    },
-                                    "if": {
-                                        "properties": {
-                                            "enabled": true
-                                        }
-                                    },
-                                    "then": {
-                                        "properties": {
-                                            "parameters": {
-                                                "minLength": 1
-                                            }
-                                        }
-                                    }
-                                },
-                                "blurPlate": {
-                                    "type": "object",
-                                    "additionalProperties": false,
-                                    "minProperties": 1,
-                                    "maxProperties": 2,
-                                    "properties": {
-                                        "enabled": {
-                                            "type": "boolean",
-                                            "default": false
-                                        },
-                                        "parameters": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "string"
-                                            },
-                                            "additionalProperties": false
-                                        }
-                                    },
-                                    "if": {
-                                        "properties": {
-                                            "enabled": true
-                                        }
-                                    },
-                                    "then": {
-                                        "properties": {
-                                            "parameters": {
-                                                "minLength": 1
-                                            }
-                                        }
-                                    }
-                                },
-                                "deleteBackground": {
-                                    "type": "object",
-                                    "additionalProperties": false,
-                                    "minProperties": 1,
-                                    "maxProperties": 2,
-                                    "properties": {
-                                        "enabled": {
-                                            "type": "boolean",
-                                            "default": false
-                                        },
-                                        "parameters": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "string"
-                                            },
-                                            "additionalProperties": false,
-                                            "minLength": 1
-                                        }
-                                    }
+                                "enabled": {
+                                    "type": "boolean",
+                                    "default": false
                                 }
                             },
-                            "minProperties": 1,
-                            "maxProperties": 6
+                            "required": [
+                                "enabled"
+                            ]
                         },
-                        "if": {
+                        "cropMargin": {
+                            "type": "object",
+                            "additionalProperties": false,
                             "properties": {
-                                "enabled": true
+                                "enabled": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "top": {
+                                    "type": "number",
+                                    "default": 0,
+                                    "minimum": 0,
+                                    "maximum": 1
+                                },
+                                "bottom": {
+                                    "type": "number",
+                                    "default": 0,
+                                    "minimum": 0,
+                                    "maximum": 1
+                                },
+                                "left": {
+                                    "type": "number",
+                                    "default": 0,
+                                    "minimum": 0,
+                                    "maximum": 1
+                                },
+                                "right": {
+                                    "type": "number",
+                                    "default": 0,
+                                    "minimum": 0,
+                                    "maximum": 1
+                                }
+                            },
+                            "required": [
+                                "enabled"
+                            ],
+                            "if": {
+                                "properties": {
+                                    "enabled": true
+                                }
+                            },
+                            "then": {
+                                "required": [
+                                    "top",
+                                    "bottom",
+                                    "left",
+                                    "right"
+                                ]
                             }
                         },
-                        "then": {
+                        "blurKeywords": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "description": "Keywords for blur",
                             "properties": {
-                                "operations": {
-                                    "minLength": 1
+                                "enabled": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "keywords": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "additionalProperties": false
+                                }
+                            },
+                            "required": ["enabled"],
+                            "if": {
+                                "properties": {
+                                    "enabled": true
+                                }
+                            },
+                            "then": {
+                                "properties": {
+                                    "keywords": {
+                                        "minLength": 1
+                                    }
                                 }
                             }
+                        },
+                        "blurPlate": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            },
+                            "required": ["enabled"]
+                        },
+                        "deleteBackground": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            },
+                            "required": ["enabled"]
                         }
-                    }
+                    },
+                    "required": ["enabled"]
                 }
             }
         }
