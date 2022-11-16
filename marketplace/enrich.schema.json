@@ -27,6 +27,78 @@
                 "priceComputation": {
                     "type": "boolean",
                     "default": false
+                },
+                "pictureOptimizer": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "minProperties": 2,
+                    "description": "Configuration to apply picture optimizer",
+                    "properties": {
+                        "active": false,
+                        "operations": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "description": "List of operations (filters) to apply on picture",
+                            "properties": {
+                                "cropping": {
+                                    "type": "boolean"
+                                },
+                                "cropping-margin": {
+                                    "type": "boolean"
+                                },
+                                "cropping-margin-ratio": {
+                                    "type": "object",
+                                    "description": "List of cropping margin auto",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "top" : {
+                                            "type": "number"
+                                        },
+                                        "bottom" : {
+                                            "type": "number"
+                                        },
+                                        "left" : {
+                                            "type": "number"
+                                        },
+                                        "right" : {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "minProperties": 4,
+                                    "maxProperties": 4,
+                                    "required": ["top", "bottom", "left", "right"]
+                                },
+                                "keywordsBlurring": {
+                                    "type": "object",
+                                    "description": "List of keywords for blurring",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "active": {
+                                            "type": "boolean"
+                                        },
+                                        "keywords" : {
+                                            "type": "object",
+                                            "minProperties": 1
+                                        }
+                                    },
+                                    "if": {"properties": {"active" : true}},
+                                    "then": {"required": ["keywords"]},
+                                    "minProperties": 2,
+                                    "maxProperties": 2
+                                },
+                                "plate": {
+                                    "type": "boolean"
+                                },
+                                "backgroundRemoval": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "minProperties": 1,
+                            "maxProperties": 6
+                        }
+                    },
+                    "if": {"properties": {"active" : true}},
+                    "then": {"required": ["operations"]}
                 }
             }
         }
