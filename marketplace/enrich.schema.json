@@ -31,7 +31,8 @@
                 "pictureOptimizer": {
                     "type": "object",
                     "additionalProperties": false,
-                    "minProperties": 2,
+                    "minProperties": 1,
+                    "maxProperties": 2,
                     "description": "Configuration to apply picture optimizer",
                     "properties": {
                         "active": false,
