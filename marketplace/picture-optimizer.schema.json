@@ -4,88 +4,69 @@
     "type": "object",
     "additionalProperties": false,
     "properties": {
-        "query": {
+        "operations": {
             "type": "object",
             "additionalProperties": false,
+            "description": "List of operations (filters) to apply on picture",
             "properties": {
-                "originalUrl": {
-                    "type": "string",
-                    "description": "Picture original url"
+                "cropping": {
+                    "type": "boolean"
                 },
-                "version": {
-                    "type": "string",
-                    "description": "Version of image (timestamp)"
+                "cropping-margin": {
+                    "type": "boolean"
                 },
-                "operations": {
+                "cropping-margin-ratio": {
                     "type": "object",
+                    "description": "List of cropping margin auto",
                     "additionalProperties": false,
-                    "description": "List of operations (filters) to apply on picture",
                     "properties": {
-                        "cropping": {
-                            "type": "boolean"
+                        "top" : {
+                            "type": "number"
                         },
-                        "cropping-margin": {
-                            "type": "boolean"
+                        "bottom" : {
+                            "type": "number"
                         },
-                        "cropping-margin-ratio": {
-                            "type": "object",
-                            "description": "List of cropping margin auto",
-                            "additionalProperties": false,
-                            "properties": {
-                                "top" : {
-                                    "type": "number"
-                                },
-                                "bottom" : {
-                                    "type": "number"
-                                },
-                                "left" : {
-                                    "type": "number"
-                                },
-                                "right" : {
-                                    "type": "number"
-                                }
-                            },
-                            "minProperties": 4,
-                            "maxProperties": 4,
-                            "required": ["top", "bottom", "left", "right"]
+                        "left" : {
+                            "type": "number"
                         },
-                        "keywordsBlurring": {
-                            "type": "object",
-                            "description": "List of keywords for blurring",
-                            "additionalProperties": false,
-                            "properties": {
-                                "active": {
-                                    "type": "boolean"
-                                },
-                                "keywords" : {
-                                    "type": "object",
-                                    "minProperties": 1
-                                }
-                            },
-                            "if": {"properties": {"active" : true}},
-                            "then": {"required": ["keywords"]},
-                            "minProperties": 2,
-                            "maxProperties": 2
-                        },
-                        "plate": {
-                            "type": "boolean"
-                        },
-                        "backgroundRemoval": {
-                            "type": "boolean"
+                        "right" : {
+                            "type": "number"
                         }
                     },
-                    "minProperties": 1,
-                    "maxProperties": 6
+                    "minProperties": 4,
+                    "maxProperties": 4,
+                    "required": ["top", "bottom", "left", "right"]
+                },
+                "keywordsBlurring": {
+                    "type": "object",
+                    "description": "List of keywords for blurring",
+                    "additionalProperties": false,
+                    "properties": {
+                        "active": {
+                            "type": "boolean"
+                        },
+                        "keywords" : {
+                            "type": "object",
+                            "minProperties": 1
+                        }
+                    },
+                    "if": {"properties": {"active" : true}},
+                    "then": {"required": ["keywords"]},
+                    "minProperties": 2,
+                    "maxProperties": 2
+                },
+                "plate": {
+                    "type": "boolean"
+                },
+                "backgroundRemoval": {
+                    "type": "boolean"
                 }
             },
-            "required": [
-                "originalUrl",
-                "version",
-                "operations"
-            ]
+            "minProperties": 1,
+            "maxProperties": 6
         }
     },
     "required": [
-        "query"
+        "operations"
     ]
 }
