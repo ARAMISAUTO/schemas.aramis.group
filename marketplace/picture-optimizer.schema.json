@@ -58,7 +58,8 @@
                                     "type": "boolean"
                                 },
                                 "keywords" : {
-                                    "type": "object"
+                                    "type": "object",
+                                    "minProperties": 1
                                 }
                             },
                             "if": {"properties": {"active" : true}},
