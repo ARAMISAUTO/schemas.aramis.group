@@ -9,24 +9,199 @@
             "additionalProperties": false,
             "properties": {
                 "weight": {
-                    "type": "boolean",
-                    "default": false
+                    "type": "object",
+                    "additionalProperties": false,
+                    "description": "Try to fill in vehicle weight if not provided by the seller",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    },
+                    "required": ["enabled"]
                 },
                 "category": {
-                    "type": "boolean",
-                    "default": false
+                    "type": "object",
+                    "additionalProperties": false,
+                    "description": "Try to enrich vehicle data with the category if not provided by the seller",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    },
+                    "required": ["enabled"]
                 },
                 "electricCo2Emission": {
-                    "type": "boolean",
-                    "default": true
+                    "type": "object",
+                    "additionalProperties": false,
+                    "description": "Try to enrich vehicle data with the electricCo2Emission if not provided by the seller",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    },
+                    "required": ["enabled"]
                 },
                 "pictogram": {
-                    "type": "boolean",
-                    "default": true
+                    "type": "object",
+                    "additionalProperties": false,
+                    "description": "Try to enrich vehicle data with the pictogram if not provided by the seller",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    },
+                    "required": ["enabled"]
                 },
                 "priceComputation": {
-                    "type": "boolean",
-                    "default": false
+                    "type": "object",
+                    "additionalProperties": false,
+                    "description": "Enabled/disable price computation enricher",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    },
+                    "required": ["enabled"]
+                },
+                "pictureOptimizer": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "description": "Enabled/disable picture optimizer enricher",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "default": false,
+                            "description": "By default, picture optimization is disabled for all partners"
+                        },
+                        "crop": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "description": "Apply crop operation",
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            },
+                            "required": ["enabled"]
+                        },
+                        "cropMargin": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "description": "Applying a crop margin on 4 sides of the picture (top, bottom, left, right)",
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "top": {
+                                    "type": "number",
+                                    "description": "Crop margin on TOP side, possible value 0 to 1",
+                                    "default": 0,
+                                    "minimum": 0,
+                                    "maximum": 1
+                                },
+                                "bottom": {
+                                    "type": "number",
+                                    "description": "Crop margin on BOTTOM side, possible value 0 to 1",
+                                    "default": 0,
+                                    "minimum": 0,
+                                    "maximum": 1
+                                },
+                                "left": {
+                                    "type": "number",
+                                    "description": "Crop margin on LEFT side, possible value 0 to 1",
+                                    "default": 0,
+                                    "minimum": 0,
+                                    "maximum": 1
+                                },
+                                "right": {
+                                    "type": "number",
+                                    "description": "Crop margin on Right side, possible value 0 to 1",
+                                    "default": 0,
+                                    "minimum": 0,
+                                    "maximum": 1
+                                }
+                            },
+                            "required": [
+                                "enabled"
+                            ],
+                            "if": {
+                                "properties": {
+                                    "enabled": true
+                                }
+                            },
+                            "then": {
+                                "required": [
+                                    "top",
+                                    "bottom",
+                                    "left",
+                                    "right"
+                                ]
+                            }
+                        },
+                        "blurKeywords": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "description": "Keywords for blur",
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "keywords": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "additionalProperties": false
+                                }
+                            },
+                            "required": ["enabled"],
+                            "if": {
+                                "properties": {
+                                    "enabled": true
+                                }
+                            },
+                            "then": {
+                                "properties": {
+                                    "keywords": {
+                                        "minLength": 1
+                                    }
+                                }
+                            }
+                        },
+                        "blurPlate": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "description": "Applying blur/plate operation when optimizing picture",
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            },
+                            "required": ["enabled"]
+                        },
+                        "deleteBackground": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "description": "Remove the background when optimizing picture",
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            },
+                            "required": ["enabled"]
+                        }
+                    },
+                    "required": ["enabled"]
                 }
             }
         }
