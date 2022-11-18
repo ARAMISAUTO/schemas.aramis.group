@@ -11,7 +11,7 @@
                 "weight": {
                     "type": "object",
                     "additionalProperties": false,
-                    "description": "Enabled/disable weight enricher",
+                    "description": "Try to fill in vehicle weight if not provided by the seller",
                     "properties": {
                         "enabled": {
                             "type": "boolean",
@@ -23,7 +23,7 @@
                 "category": {
                     "type": "object",
                     "additionalProperties": false,
-                    "description": "Enabled/disable category enricher",
+                    "description": "Try to enrich vehicle data with the category if not provided by the seller",
                     "properties": {
                         "enabled": {
                             "type": "boolean",
@@ -35,7 +35,7 @@
                 "electricCo2Emission": {
                     "type": "object",
                     "additionalProperties": false,
-                    "description": "Enabled/disable electric co2 emission enricher",
+                    "description": "Try to enrich vehicle data with the electricCo2Emission if not provided by the seller",
                     "properties": {
                         "enabled": {
                             "type": "boolean",
@@ -47,7 +47,7 @@
                 "pictogram": {
                     "type": "object",
                     "additionalProperties": false,
-                    "description": "Enabled/disable pictogram enricher",
+                    "description": "Try to enrich vehicle data with the pictogram if not provided by the seller",
                     "properties": {
                         "enabled": {
                             "type": "boolean",
@@ -81,19 +81,19 @@
                         "crop": {
                             "type": "object",
                             "additionalProperties": false,
+                            "description": "Apply crop operation",
                             "properties": {
                                 "enabled": {
                                     "type": "boolean",
                                     "default": false
                                 }
                             },
-                            "required": [
-                                "enabled"
-                            ]
+                            "required": ["enabled"]
                         },
                         "cropMargin": {
                             "type": "object",
                             "additionalProperties": false,
+                            "description": "Applying a crop margin on 4 sides of the picture (top, bottom, left, right)",
                             "properties": {
                                 "enabled": {
                                     "type": "boolean",
@@ -101,24 +101,28 @@
                                 },
                                 "top": {
                                     "type": "number",
+                                    "description": "Crop margin on TOP side, possible value 0 to 1",
                                     "default": 0,
                                     "minimum": 0,
                                     "maximum": 1
                                 },
                                 "bottom": {
                                     "type": "number",
+                                    "description": "Crop margin on BOTTOM side, possible value 0 to 1",
                                     "default": 0,
                                     "minimum": 0,
                                     "maximum": 1
                                 },
                                 "left": {
                                     "type": "number",
+                                    "description": "Crop margin on LEFT side, possible value 0 to 1",
                                     "default": 0,
                                     "minimum": 0,
                                     "maximum": 1
                                 },
                                 "right": {
                                     "type": "number",
+                                    "description": "Crop margin on Right side, possible value 0 to 1",
                                     "default": 0,
                                     "minimum": 0,
                                     "maximum": 1
@@ -175,6 +179,7 @@
                         "blurPlate": {
                             "type": "object",
                             "additionalProperties": false,
+                            "description": "Applying blur/plate operation when optimizing picture",
                             "properties": {
                                 "enabled": {
                                     "type": "boolean",
@@ -186,6 +191,7 @@
                         "deleteBackground": {
                             "type": "object",
                             "additionalProperties": false,
+                            "description": "Remove the background when optimizing picture",
                             "properties": {
                                 "enabled": {
                                     "type": "boolean",
