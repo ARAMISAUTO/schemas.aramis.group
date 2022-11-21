@@ -85,6 +85,22 @@
                             "required": ["join", "on", "url"]
                         }
                     }
+                },
+                "extraOperations": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "mobile.de": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            }
+                        }
+                    }
                 }
             },
             "required": [
