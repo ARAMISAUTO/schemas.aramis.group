@@ -22,7 +22,7 @@
                             "default": false
                         }
                     },
-                    "required": ["enabled", "replace"]
+                    "required": ["enabled"]
                 },
                 "weight": {
                     "type": "object",
@@ -38,7 +38,7 @@
                             "default": false
                         }
                     },
-                    "required": ["enabled", "replace"]
+                    "required": ["enabled"]
                 },
                 "category": {
                     "type": "object",
@@ -54,7 +54,7 @@
                             "default": false
                         }
                     },
-                    "required": ["enabled", "replace"]
+                    "required": ["enabled"]
                 },
                 "electricCo2Emission": {
                     "type": "object",
@@ -70,7 +70,7 @@
                             "default": false
                         }
                     },
-                    "required": ["enabled", "replace"]
+                    "required": ["enabled"]
                 },
                 "pictogram": {
                     "type": "object",
@@ -98,7 +98,7 @@
                             "default": false
                         }
                     },
-                    "required": ["enabled", "replace"]
+                    "required": ["enabled"]
                 },
                 "pictureOptimizer": {
                     "type": "object",
