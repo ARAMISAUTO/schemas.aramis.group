@@ -8,12 +8,32 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+                "brandModel": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "description": "Try to fill in vehicle weight if not provided by the seller",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "replace": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    },
+                    "required": ["enabled"]
+                },
                 "weight": {
                     "type": "object",
                     "additionalProperties": false,
                     "description": "Try to fill in vehicle weight if not provided by the seller",
                     "properties": {
                         "enabled": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "replace": {
                             "type": "boolean",
                             "default": false
                         }
@@ -28,6 +48,10 @@
                         "enabled": {
                             "type": "boolean",
                             "default": false
+                        },
+                        "replace": {
+                            "type": "boolean",
+                            "default": false
                         }
                     },
                     "required": ["enabled"]
@@ -40,6 +64,10 @@
                         "enabled": {
                             "type": "boolean",
                             "default": true
+                        },
+                        "replace": {
+                            "type": "boolean",
+                            "default": false
                         }
                     },
                     "required": ["enabled"]
@@ -64,6 +92,10 @@
                         "enabled": {
                             "type": "boolean",
                             "default": true
+                        },
+                        "replace": {
+                            "type": "boolean",
+                            "default": false
                         }
                     },
                     "required": ["enabled"]
@@ -202,7 +234,8 @@
                         }
                     },
                     "required": ["enabled"]
-                }
+                },
+                "required": ["brandModel", "weight", "category", "electricCo2Emission", "pictogram", "priceComputation", "pictureOptimizer"]
             }
         }
     }
