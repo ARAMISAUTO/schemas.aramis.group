@@ -17,6 +17,10 @@
                 "removeDuplicates": {
                     "type": "boolean",
                     "default": true
+                },
+                "enableVehicleBlacklisted": {
+                    "type": "boolean",
+                    "default": true
                 }
             },
             "required": [
