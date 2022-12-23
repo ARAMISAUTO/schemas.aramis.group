@@ -8,6 +8,22 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+                "brandModel": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "description": "Try to fill in vehicle weight if not provided by the seller",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "replace": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    },
+                    "required": ["enabled", "replace"]
+                },
                 "weight": {
                     "type": "object",
                     "additionalProperties": false,
@@ -16,9 +32,13 @@
                         "enabled": {
                             "type": "boolean",
                             "default": false
+                        },
+                        "replace": {
+                            "type": "boolean",
+                            "default": false
                         }
                     },
-                    "required": ["enabled"]
+                    "required": ["enabled", "replace"]
                 },
                 "category": {
                     "type": "object",
@@ -28,9 +48,13 @@
                         "enabled": {
                             "type": "boolean",
                             "default": false
+                        },
+                        "replace": {
+                            "type": "boolean",
+                            "default": false
                         }
                     },
-                    "required": ["enabled"]
+                    "required": ["enabled", "replace"]
                 },
                 "electricCo2Emission": {
                     "type": "object",
@@ -40,9 +64,13 @@
                         "enabled": {
                             "type": "boolean",
                             "default": true
+                        },
+                        "replace": {
+                            "type": "boolean",
+                            "default": false
                         }
                     },
-                    "required": ["enabled"]
+                    "required": ["enabled", "replace"]
                 },
                 "pictogram": {
                     "type": "object",
@@ -64,9 +92,13 @@
                         "enabled": {
                             "type": "boolean",
                             "default": true
+                        },
+                        "replace": {
+                            "type": "boolean",
+                            "default": false
                         }
                     },
-                    "required": ["enabled"]
+                    "required": ["enabled", "replace"]
                 },
                 "pictureOptimizer": {
                     "type": "object",
